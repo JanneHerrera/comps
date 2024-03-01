@@ -6,19 +6,19 @@ function App() {
         <Button>Hi there!</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>Click Me</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>See deals</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>asdasd</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>asdasd</Button>
       </div>
       <div>
-        <Button></Button>
+        <Button>dddd</Button>
       </div>
     </div>
   );
