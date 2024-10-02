@@ -1,37 +1,28 @@
-import { useState } from "react";
-import { GoChevronDown, GoChevronLeft } from "react-icons/go";
+import Accordion from '../components/Accordion';
 
-function AccordionPage({ items }) {
-  const [expandedIndex, setExpandedIndex] = useState(-1);
-  const handleClick = (nextIndex) => {
-    if (nextIndex === expandedIndex) {
-      setExpandedIndex(-1);
-    } else {
-      setExpandedIndex(nextIndex);
-    }
-  };
+function AccordionPage() {
+  const items = [
+    {
+      id: 'l2kj5',
+      label: 'Can I use React on a project?',
+      content:
+        'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
+    },
+    {
+      id: 'lk2j35lkj',
+      label: 'Can I use Javascript on a project?',
+      content:
+        'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
+    },
+    {
+      id: 'l1kj2i0g',
+      label: 'Can I use CSS on a project?',
+      content:
+        'You can use React on any project you want. You can use React on any project you want. You can use React on any project you want. You can use React on any project you want.',
+    },
+  ];
 
-  const renderedItems = items.map((item, index) => {
-    const isExpanded = index === expandedIndex;
-    console.log(isExpanded);
-
-    const icon = (
-      <span>{isExpanded ? <GoChevronDown /> : <GoChevronLeft />}</span>
-    );
-    return (
-      <div key={item.id}>
-        <div
-          className="flex  justify-between p-3 bf-gray-50 border-b items-center cursor-pointer"
-          onClick={() => handleClick(index)}
-        >
-          {item.label}
-          {icon}
-        </div>
-        {isExpanded && <div className="border-b p-5"> {item.content} </div>}
-      </div>
-    );
-  });
-  return <div className="borer-x border-t rounded">{renderedItems}</div>;
+  return <Accordion items={items} />;
 }
 
 export default AccordionPage;
