@@ -23,9 +23,33 @@ function TablePage() {
       score: 4,
     },
   ];
+  const config = [
+    {
+      label: "Name",
+      render: (fruit) => {
+        return fruit.name;
+      },
+    },
+    {
+      label: "Color",
+      render: (fruit) => {
+        return <div className={`p-3 m-3 ${fruit.color}`}></div>;
+      },
+    },
+    {
+      label: "Score",
+      render: (fruit) => {
+        return fruit.score;
+      },
+    },
+  ];
+
+  const keyFn = (fruit) => {
+    return fruit.name;
+  };
   return (
     <div>
-      <Table data={data} />
+      <Table data={data} config={config} keyFn={keyFn} />
     </div>
   );
 }
